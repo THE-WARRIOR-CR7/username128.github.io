@@ -21,9 +21,20 @@ function draw() {
     stroke("#ff0000");
     if (leftWrist_score>0.2) {
         circle(leftWristX,leftWristY,20);
-   
-    }
+   song2.stop();
+   if (song1Status == false) {
+song1.play();
+document.getElementById("song").innerHTML="Avengers Theme song is playing";
+   }
+     }if (rightWrist_score>0.2) {
+        circle(rightWristX,rightWristY,20);
+        song1.stop();
+   if (song2Status == false) {
+song2.play();
+document.getElementById("song").innerHTML="Pirates song is playing";
+   }
 }
+} 
 
 function setup() {
     canvas = createCanvas(600, 475);
